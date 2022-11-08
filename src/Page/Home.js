@@ -1,12 +1,10 @@
 import React from "react";
 import Banner from "../Components/Banner";
-import Services from "../Components/Services";
-import Navbar from "../Shared/Navbar";
+import Services from "../Components/ServiceSection";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <Banner />
       <Services />
     </div>
