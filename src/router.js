@@ -3,6 +3,7 @@ import ServiceDetails from "./Components/ServiceDetails";
 import Main from "./Layout/Main";
 import Home from "./Page/Home";
 import Login from "./Page/Login";
+import Register from "./Page/Register";
 import Services from "./Page/Services";
 
 export const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

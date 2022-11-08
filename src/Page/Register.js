@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -49,4 +49,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
