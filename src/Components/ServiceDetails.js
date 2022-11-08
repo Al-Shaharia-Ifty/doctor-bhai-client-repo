@@ -38,6 +38,9 @@ const ServiceDetails = () => {
             <ReviewCart r={r} key={r.email} />
           ))}
         </div>
+        <div className="flex justify-center">
+          <button className="btn btn-warning">Add Review</button>
+        </div>
       </div>
     </div>
   );
