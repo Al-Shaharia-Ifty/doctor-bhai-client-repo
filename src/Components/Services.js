@@ -1,16 +1,22 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ServiceCart from "./ServiceCart";
 
 const Services = () => {
   const data = useLoaderData();
   return (
     <div>
-      <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-6 lg:mx-20 md:mx-10 mx-0">
-        {data.slice(0, 3).map((service) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:mx-20 md:mx-10 mx-5">
+        {data?.slice(0, 3)?.map((service) => (
           <ServiceCart service={service} />
         ))}
       </div>
+      <Link
+        to="services"
+        className="flex justify-center lg:mx-20 md:mx-10 mx-5"
+      >
+        <button className="btn btn-outline">See All services</button>
+      </Link>
     </div>
   );
 };
