@@ -6,7 +6,7 @@ const Services = () => {
   const data = useLoaderData();
   return (
     <div>
-      <div className="grid grid-cols-3 gap-6 lg:mx-20 md:mx-10 mx-0">
+      <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-6 lg:mx-20 md:mx-10 mx-0">
         {data.slice(0, 3).map((service) => (
           <ServiceCart service={service} />
         ))}
