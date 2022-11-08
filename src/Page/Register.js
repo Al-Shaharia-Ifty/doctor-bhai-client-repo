@@ -1,17 +1,60 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import auth from "../firebase.config";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading";
+import { toast } from "react-toastify";
 
 const Register = () => {
-  const handleSubmit = (e) => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, uError] = useUpdateProfile(auth);
+  let errorMessage;
+
+  if (user) {
+  }
+  if (loading || updating) {
+    return <Loading />;
+  }
+  if (error || uError) {
+    errorMessage = (
+      <p className="text-xl text-red-500">
+        {error?.message || uError?.message}
+      </p>
+    );
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const displayName = name.toString();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    console.log(displayName);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName });
+    toast.success("Create Account");
   };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit} className="card-body">
-            <h2 className="text-4xl text-center">Login</h2>
+            <h2 className="text-4xl text-center">Register</h2>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -21,6 +64,7 @@ const Register = () => {
                 name="email"
                 placeholder="Email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -32,12 +76,14 @@ const Register = () => {
                 name="password"
                 placeholder="******"
                 className="input input-bordered"
+                required
               />
               <label className="label">
-                <a href="/" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                <Link to="/login" className="label-text-alt link link-hover">
+                  Already have an account.
+                </Link>
               </label>
+              {errorMessage}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>

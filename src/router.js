@@ -14,23 +14,23 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/service/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(`https://doctor-server-ruddy.vercel.app/service/${params.id}`),
       },
       {
         path: "/login",

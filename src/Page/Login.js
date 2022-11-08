@@ -1,10 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import auth from "../firebase.config";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  let errorMessage;
+  //   condition
+  if (user) {
+    console.log(user);
+  }
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    errorMessage = <p className="text-lg text-red-500">{error.message}</p>;
+  }
+
+  //
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    signInWithEmailAndPassword(email, password);
   };
   return (
     <div>
@@ -34,10 +54,11 @@ const Login = () => {
                 className="input input-bordered"
               />
               <label className="label">
-                <a href="/" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                <Link to="/register" className="label-text-alt link link-hover">
+                  Don't Have an Account
+                </Link>
               </label>
+              {errorMessage}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
