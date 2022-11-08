@@ -12,7 +12,7 @@ const Services = () => {
         ))}
       </div>
       <Link
-        to="../service"
+        to="../services"
         className="flex justify-center lg:mx-20 md:mx-10 mx-5"
       >
         <button className="btn btn-outline">See All services</button>

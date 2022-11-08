@@ -23,19 +23,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="mx-1 rounded-lg text-md text-gray-800"
-                  to="about"
-                >
-                  About Us
+                <NavLink className="mx-1 rounded-lg text-md" to="services">
+                  Services
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="mx-1 rounded-lg text-md text-gray-800"
-                  to="contact"
-                >
-                  Contact Us
+                <NavLink className="mx-1 rounded-lg text-md" to="login">
+                  Login
                 </NavLink>
               </li>
             </ul>
@@ -66,13 +60,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="my-1" to="about">
-                  About Us
+                <NavLink className="my-1" to="Services">
+                  Services
                 </NavLink>
               </li>
               <li>
-                <NavLink className="my-1" to="contact">
-                  Contact Us
+                <NavLink className="my-1" to="login">
+                  Login
                 </NavLink>
               </li>
             </ul>
