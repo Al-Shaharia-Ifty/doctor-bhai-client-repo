@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import ServiceDetails from "./Components/ServiceDetails";
 import Main from "./Layout/Main";
 import Home from "./Page/Home";
-import Login from "./Page/Login";
-import Register from "./Page/Register";
+import Login from "./Authentication/Login";
+import Register from "./Authentication/Register";
 import Services from "./Page/Services";
 
 export const router = createBrowserRouter([
@@ -14,24 +14,25 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/service/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`https://doctor-server-ruddy.vercel.app/service/${params.id}`),
+          fetch(`http://localhost:5000/service/${params.id}`),
       },
+
       {
         path: "/login",
         element: <Login />,
