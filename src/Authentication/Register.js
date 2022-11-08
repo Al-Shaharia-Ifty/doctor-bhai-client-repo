@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.config";
 import {
   useCreateUserWithEmailAndPassword,
@@ -9,13 +9,21 @@ import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
 
 const Register = () => {
+  const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
   let errorMessage;
 
-  if (user) {
-  }
+  useEffect(() => {
+    if (user) {
+      console.log(user);
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user]);
   if (loading || updating) {
     return <Loading />;
   }
@@ -28,11 +36,9 @@ const Register = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const displayName = name.toString();
+    const displayName = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(displayName);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName });
     toast.success("Create Account");

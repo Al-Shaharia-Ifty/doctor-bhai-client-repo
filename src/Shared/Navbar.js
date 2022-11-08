@@ -1,8 +1,54 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../Assets/logo.png";
+import auth from "../firebase.config";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const menuList = [
+    <>
+      <li>
+        <NavLink className="mx-1 rounded-lg text-md" to="home">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="mx-1 rounded-lg text-md" to="services">
+          Services
+        </NavLink>
+      </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink className="mx-1 rounded-lg text-md" to="my-review">
+              My Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="mx-1 rounded-lg text-md" to="add-service">
+              Add Service
+            </NavLink>
+          </li>
+          <li>
+            <button
+              onClick={() => signOut(auth)}
+              className="btn btn-outline btn-error"
+            >
+              Sign Out
+            </button>
+          </li>
+        </>
+      ) : (
+        <li>
+          <NavLink className="mx-1 rounded-lg text-md" to="login">
+            Login
+          </NavLink>
+        </li>
+      )}
+    </>,
+  ];
   return (
     <div>
       <div className="navbar bg-base-200 pl-5 md:px-10 lg:px-20">
@@ -16,23 +62,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal p-0">
-              <li>
-                <NavLink className="mx-1 rounded-lg text-md" to="home">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="mx-1 rounded-lg text-md" to="services">
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="mx-1 rounded-lg text-md" to="login">
-                  Login
-                </NavLink>
-              </li>
-            </ul>
+            <ul className="menu menu-horizontal p-0">{menuList}</ul>
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,21 +84,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <NavLink className="my-1" to="home">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="my-1" to="Services">
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="my-1" to="login">
-                  Login
-                </NavLink>
-              </li>
+              {menuList}
             </ul>
           </div>
         </div>
