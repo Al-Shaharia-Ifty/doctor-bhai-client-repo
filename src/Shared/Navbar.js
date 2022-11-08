@@ -5,7 +5,7 @@ import logo from "../Assets/logo.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-200 pl-5 md:px-20">
+      <div className="navbar bg-base-200 pl-5 md:px-10 lg:px-20">
         <div className="navbar-start">
           <NavLink
             to="/home"

@@ -1,12 +1,12 @@
 import React from "react";
-import banner from "../Assets/banner/banner-main.jpg";
+import photo from "../Assets/banner/banner-main.jpg";
 
 const Banner = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200 px-20">
+      <div className="hero min-h-screen bg-base-200 lg:px-20 md:px-10 px-0">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={banner} className="max-w-sm rounded-lg shadow-2xl" />
+          <img src={photo} className="max-w-sm rounded-lg shadow-2xl" alt="" />
           <div>
             <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
             <p className="py-6 lg:w-2/3">

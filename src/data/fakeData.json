@@ -2,6 +2,157 @@
   {
     "name": "Dental Bonding",
     "img": "https://i.ibb.co/qsQnF6B/image2.jpg",
-    "details": "Dental bonding is a cosmetic procedure that uses a tooth-colored composite resin material to enhance your smile. This procedure is used to repair chips, close down gaps or change the shape and color of a tooth. Unlike other cosmetic dental treatments, such as porcelain veneers, dental bonding is completely reversible."
+    "price": "19",
+    "details": "Dental bonding is a cosmetic procedure that uses a tooth-colored composite resin material to enhance your smile. This procedure is used to repair chips, close down gaps or change the shape and color of a tooth. Unlike other cosmetic dental treatments, such as porcelain veneers, dental bonding is completely reversible.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
+  },
+  {
+    "name": "Dental Crowns",
+    "img": "https://i.ibb.co/t8Nn4jm/image3.jpg",
+    "price": "27",
+    "details": "Dental crowns are caps placed on top of damaged teeth. Crowns are used to protect, cover and restore the shape of your teeth when fillings don't solve the problem. Dental crowns can be made out of metals, porcelain, resin and ceramics. They typically don't require special care over time other than regular good oral hygiene.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
+  },
+  {
+    "name": "Bridgework",
+    "img": "https://i.ibb.co/QKgqLk3/image4.jpg",
+    "price": "15",
+    "details": "A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia. They are fixed in place and, for some people, are an alternative to dentures.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
+  },
+  {
+    "name": "Cosmetic Fillings",
+    "img": "https://i.ibb.co/f0fsXH8/image5.png",
+    "price": "30",
+    "details": "Cosmetic fillings are a tooth-colored alternative to traditional amalgam fillings, and are used to replace areas of decay in a tooth. They are less noticeable than amalgam fillings and improve the appearance of your smile.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
+  },
+  {
+    "name": "Invisalign",
+    "img": "https://i.ibb.co/HG6Vj4m/image6.jpg",
+    "price": "21",
+    "details": "Invisalign is the brand name of a type of thin clear aligner used in orthodontic treatment. The aligner is made from a flexible thermoplastic material named SmartTrack.As the name suggests, this product is designed to make orthodontic treatment “less conspicuous,” as the American Association of Orthodontists puts it.Although Invisalign aligners may not be completely invisible, these clear coverings fit tightly over your teeth and are much less noticeable than the brackets and wires of traditional braces.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
+  },
+  {
+    "name": "Dental Veneers",
+    "img": "https://i.ibb.co/rFJR2FZ/image7.jpg",
+    "price": "18",
+    "details": "Dental veneers are custom-made shells that fit over the front surfaces of your teeth. They conceal cracks, chips, stains and other cosmetic imperfections. Veneers are one of the most common cosmetic dentistry treatments. There are several types of veneers available, depending on your specific goals.",
+    "review": [
+      {
+        "name": "Kudus Ali",
+        "email": "kudus@ali.com",
+        "photo": "https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      },
+      {
+        "name": "Bokkor Ali",
+        "email": "bokkor@ali.com",
+        "photo": "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
+        "comment": "ai service ta anoke valo."
+      },
+      {
+        "name": "Alom Mia",
+        "email": "alom@mia.com",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkT5UYjfhcxK1YhWehtvairf-HD-6DmzULYw&usqp=CAU",
+        "comment": "valo valo anoke valo. Joss sai sai."
+      }
+    ]
   }
 ]
