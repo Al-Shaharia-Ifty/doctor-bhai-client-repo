@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.config";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading";
 import useToken from "../Hooks/useToken";
+import useGoogleToken from "../Hooks/useGoogleToken";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,20 +16,24 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [token] = useToken(user);
+  const [gToken] = useGoogleToken(gUser);
   let errorMessage;
 
   //   condition
   useEffect(() => {
-    if (token) {
+    if (token || gToken) {
       navigate(from, { replace: true });
     }
-  }, [from, navigate, token]);
-  if (loading) {
+  }, [from, navigate, token, gToken]);
+  if (loading || gLoading) {
     return <Loading />;
   }
-  if (error) {
-    errorMessage = <p className="text-lg text-red-500">{error.message}</p>;
+  if (error || gError) {
+    errorMessage = (
+      <p className="text-lg text-red-500">{error.message || gError.message}</p>
+    );
   }
 
   //
@@ -72,6 +80,13 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
+            <div className="divider">OR</div>
+            <button
+              onClick={() => signInWithGoogle()}
+              className="btn btn-outline w-full"
+            >
+              Continue with google
+            </button>
           </form>
         </div>
       </div>

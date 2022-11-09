@@ -4,9 +4,12 @@ import auth from "../firebase.config";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
+  useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
+import useToken from "../Hooks/useToken";
+import useGoogleToken from "../Hooks/useGoogleToken";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -15,22 +18,24 @@ const Register = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
+  const [token] = useToken(user);
+  const [gToken] = useGoogleToken(gUser);
   let errorMessage;
 
   useEffect(() => {
-    if (user) {
-      console.log(user);
+    if (token || gToken) {
       navigate(from, { replace: true });
     }
-  }, [from, navigate, user]);
-  if (loading || updating) {
+  }, [from, navigate, token, gToken]);
+  if (loading || updating || gLoading) {
     return <Loading />;
   }
-  if (error || uError) {
+  if (error || uError || gError) {
     errorMessage = (
       <p className="text-xl text-red-500">
-        {error?.message || uError?.message}
+        {error?.message || uError?.message || gError?.message}
       </p>
     );
   }
@@ -96,6 +101,13 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
+            <div className="divider">OR</div>
+            <button
+              onClick={() => signInWithGoogle()}
+              className="btn btn-outline w-full"
+            >
+              Continue with google
+            </button>
           </form>
         </div>
       </div>

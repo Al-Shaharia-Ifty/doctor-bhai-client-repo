@@ -38,7 +38,10 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => signOut(auth)}
+              onClick={() => {
+                signOut(auth);
+                localStorage.setItem("accessToken", "");
+              }}
               className="btn btn-outline btn-error"
             >
               Sign Out
