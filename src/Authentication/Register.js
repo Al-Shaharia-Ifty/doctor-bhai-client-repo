@@ -39,8 +39,10 @@ const Register = () => {
     const displayName = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const photoURL =
+      "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png";
     await createUserWithEmailAndPassword(email, password);
-    await updateProfile({ displayName });
+    await updateProfile({ displayName, photoURL });
     toast.success("Create Account");
   };
   return (

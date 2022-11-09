@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
@@ -6,7 +6,14 @@ import ReviewCart from "./ReviewCart";
 
 const ServiceDetails = () => {
   const data = useLoaderData();
-  const { _id, name, img, details, price, review } = data;
+  const [review, setReview] = useState([]);
+  const { _id, name, img, details, price } = data;
+  useEffect(() => {
+    fetch(`https://doctor-server-ruddy.vercel.app/review/${name}`)
+      .then((res) => res.json())
+      .then((data) => setReview(data));
+  }, [name]);
+
   return (
     <div className="py-10">
       <div className="hero bg-base-200">

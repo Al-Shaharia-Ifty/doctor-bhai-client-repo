@@ -6,7 +6,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
 
     if (email) {
-      const url = `http://localhost:5000/user/${email}`;
+      const url = `https://doctor-server-ruddy.vercel.app/user/${email}`;
       fetch(url, {
         method: "PUT",
         headers: {

@@ -1,17 +1,41 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.config";
+import { toast } from "react-toastify";
 
 const AddReview = () => {
   const data = useLoaderData();
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const { _id, name } = data;
+  const { displayName, email, photoURL } = user;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
-    console.log(comment);
+    const uploadComment = {
+      name: displayName,
+      service: name,
+      email: email,
+      photo: photoURL,
+      comment: comment,
+    };
+
+    fetch(`https://doctor-server-ruddy.vercel.app/add-review/${name}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(uploadComment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Comment Successful");
+          navigate(`/service/${_id}`);
+        }
+      });
   };
   return (
     <div>
