@@ -5,6 +5,8 @@ import Home from "./Page/Home";
 import Login from "./Authentication/Login";
 import Register from "./Authentication/Register";
 import Services from "./Page/Services";
+import AddReview from "./Components/AddReview";
+import RequireAuth from "./Authentication/RequireAuth";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +35,16 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/service/${params.id}`),
       },
 
+      {
+        path: "/add-review/:id",
+        element: (
+          <RequireAuth>
+            <AddReview />
+          </RequireAuth>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
+      },
       {
         path: "/login",
         element: <Login />,

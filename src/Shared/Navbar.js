@@ -4,9 +4,14 @@ import logo from "../Assets/logo.png";
 import auth from "../firebase.config";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import Loading from "./Loading";
 
 const Navbar = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <Loading />;
+  }
   const menuList = [
     <>
       <li>

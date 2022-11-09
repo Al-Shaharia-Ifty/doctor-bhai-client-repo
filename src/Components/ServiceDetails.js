@@ -1,12 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import ReviewCart from "./ReviewCart";
 
 const ServiceDetails = () => {
   const data = useLoaderData();
-  const { name, img, details, price, review } = data;
+  const { _id, name, img, details, price, review } = data;
   return (
     <div className="py-10">
       <div className="hero bg-base-200">
@@ -38,9 +38,9 @@ const ServiceDetails = () => {
             <ReviewCart r={r} key={r.email} />
           ))}
         </div>
-        <div className="flex justify-center">
+        <Link to={`/add-review/${_id}`} className="flex justify-center">
           <button className="btn btn-warning">Add Review</button>
-        </div>
+        </Link>
       </div>
     </div>
   );

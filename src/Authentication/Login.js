@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.config";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading";
+import useToken from "../Hooks/useToken";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,14 +12,15 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
   let errorMessage;
 
   //   condition
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [from, navigate, user]);
+  }, [from, navigate, token]);
   if (loading) {
     return <Loading />;
   }
