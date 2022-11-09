@@ -7,6 +7,7 @@ import Register from "./Authentication/Register";
 import Services from "./Page/Services";
 import AddReview from "./Components/AddReview";
 import RequireAuth from "./Authentication/RequireAuth";
+import MyReview from "./Page/MyReview";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,14 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`https://doctor-server-ruddy.vercel.app/service/${params.id}`),
+      },
+      {
+        path: "/my-review",
+        element: (
+          <RequireAuth>
+            <MyReview />
+          </RequireAuth>
+        ),
       },
       {
         path: "/login",
