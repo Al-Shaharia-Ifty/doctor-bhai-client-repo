@@ -24,6 +24,11 @@ const Navbar = () => {
           Services
         </NavLink>
       </li>
+      <li>
+        <NavLink className="mx-1 rounded-lg text-md" to="blog">
+          Blogs
+        </NavLink>
+      </li>
       {user ? (
         <>
           <li>

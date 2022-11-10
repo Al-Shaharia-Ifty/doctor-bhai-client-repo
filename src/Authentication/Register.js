@@ -25,6 +25,7 @@ const Register = () => {
   let errorMessage;
 
   useEffect(() => {
+    document.title = `Register - Doctor Bhai`;
     if (token || gToken) {
       navigate(from, { replace: true });
     }

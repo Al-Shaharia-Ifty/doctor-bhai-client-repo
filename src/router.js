@@ -8,6 +8,7 @@ import Services from "./Page/Services";
 import AddReview from "./Components/AddReview";
 import RequireAuth from "./Authentication/RequireAuth";
 import MyReview from "./Page/MyReview";
+import Blog from "./Page/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },

@@ -23,6 +23,7 @@ const Login = () => {
 
   //   condition
   useEffect(() => {
+    document.title = `Login - Doctor Bhai`;
     if (token || gToken) {
       navigate(from, { replace: true });
     }

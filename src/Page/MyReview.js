@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import DeleteReview from "../Components/DeleteReview";
 import EditReview from "../Components/EditReview";
@@ -19,6 +19,9 @@ const MyReview = () => {
       },
     }).then((res) => res.json())
   );
+  useEffect(() => {
+    document.title = "My Review - Doctor Bhai";
+  }, []);
   if (isLoading) {
     return <Loading />;
   }
