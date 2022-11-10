@@ -9,6 +9,8 @@ import AddReview from "./Components/AddReview";
 import RequireAuth from "./Authentication/RequireAuth";
 import MyReview from "./Page/MyReview";
 import Blog from "./Page/Blog";
+import AddService from "./Page/AddService";
+import ErrorPage from "./Page/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/add-service",
+        element: (
+          <RequireAuth>
+            <AddService />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/login",
         element: <Login />,
       },
@@ -68,5 +78,6 @@ export const router = createBrowserRouter([
         element: <Blog />,
       },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
