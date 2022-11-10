@@ -7,7 +7,7 @@ const ServiceCart = ({ service }) => {
   const { name, _id, img, price, details } = service;
   return (
     <div>
-      <div className="mb-10 bg-base-100 overflow-hidden rounded-lg">
+      <div className="bg-base-100 overflow-hidden rounded-lg">
         <div>
           <PhotoProvider>
             <PhotoView src={img}>
