@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.config";
@@ -10,7 +10,9 @@ const AddReview = () => {
   const navigate = useNavigate();
   const { _id, name } = data;
   const { displayName, email, photoURL } = user;
-
+  useEffect(() => {
+    document.title = `Add Review - Doctor Bhai`;
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;

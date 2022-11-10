@@ -9,6 +9,7 @@ const ServiceDetails = () => {
   const [review, setReview] = useState([]);
   const { _id, name, img, details, price } = data;
   useEffect(() => {
+    document.title = `${name} - Doctor Bhai`;
     fetch(`https://doctor-server-ruddy.vercel.app/review/${name}`)
       .then((res) => res.json())
       .then((data) => setReview(data));
