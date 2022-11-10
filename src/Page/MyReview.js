@@ -12,7 +12,7 @@ const MyReview = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch(`http://localhost:5000/my-review`, {
+    fetch(`https://doctor-server-ruddy.vercel.app/my-review`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

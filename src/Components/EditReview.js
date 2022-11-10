@@ -7,7 +7,7 @@ const EditReview = ({ setEditReview, refetch, editReview }) => {
     e.preventDefault();
     const comment = e.target.comment.value;
     const editComment = { comment: comment };
-    fetch(`http://localhost:5000/review/${_id}`, {
+    fetch(`https://doctor-server-ruddy.vercel.app/review/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

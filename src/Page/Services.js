@@ -5,7 +5,9 @@ import Loading from "../Shared/Loading";
 
 const Services = () => {
   const { data: service, isLoading } = useQuery("service", () =>
-    fetch(`http://localhost:5000/services`).then((res) => res.json())
+    fetch(`https://doctor-server-ruddy.vercel.app/services`).then((res) =>
+      res.json()
+    )
   );
   useEffect(() => {
     document.title = "Services - Doctor Bhai";

@@ -6,7 +6,9 @@ import ServiceCart from "./ServiceCart";
 
 const Services = () => {
   const { data: service, isLoading } = useQuery("service", () =>
-    fetch(`http://localhost:5000/services`).then((res) => res.json())
+    fetch(`https://doctor-server-ruddy.vercel.app/services`).then((res) =>
+      res.json()
+    )
   );
   if (isLoading) {
     return <Loading />;

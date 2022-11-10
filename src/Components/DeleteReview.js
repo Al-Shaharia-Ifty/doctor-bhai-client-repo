@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteReview = ({ deleteReview, setDeleteReview, refetch }) => {
   const { comment, _id } = deleteReview;
   const handleDelete = () => {
-    fetch(`http://localhost:5000/my-review/${_id}`, {
+    fetch(`https://doctor-server-ruddy.vercel.app/my-review/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -18,9 +18,8 @@ const AddService = () => {
       price: price,
       details: details,
     };
-    console.log(uploadService);
 
-    fetch("http://localhost:5000/add-service", {
+    fetch("https://doctor-server-ruddy.vercel.app/add-service", {
       method: "POST",
       headers: {
         "content-type": "application/json",
