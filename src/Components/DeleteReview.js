@@ -1,9 +1,22 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const DeleteReview = ({ deleteReview, setDeleteReview, refetch }) => {
-  const { service, comment } = deleteReview;
+  const { service, comment, _id } = deleteReview;
   console.log(comment);
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    fetch(`http://localhost:5000/my-review/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          toast.success(`Delete successfully`);
+          setDeleteReview(null);
+          refetch();
+        }
+      });
+  };
   return (
     <div>
       <input
