@@ -20,17 +20,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("https://doctor-server-ruddy.vercel.app/services"),
       },
       {
         path: "/service/:id",

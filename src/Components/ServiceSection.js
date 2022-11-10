@@ -1,13 +1,20 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
+import Loading from "../Shared/Loading";
 import ServiceCart from "./ServiceCart";
 
 const Services = () => {
-  const data = useLoaderData();
+  const { data: service, isLoading } = useQuery("service", () =>
+    fetch(`http://localhost:5000/services`).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:mx-20 md:mx-10 mx-5">
-        {data?.slice(-3)?.map((service) => (
+        {service?.slice(-3)?.map((service) => (
           <ServiceCart service={service} key={service._id} />
         ))}
       </div>

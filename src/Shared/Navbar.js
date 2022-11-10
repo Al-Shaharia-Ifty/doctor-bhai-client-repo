@@ -24,11 +24,7 @@ const Navbar = () => {
           Services
         </NavLink>
       </li>
-      <li>
-        <NavLink className="mx-1 rounded-lg text-md" to="blog">
-          Blogs
-        </NavLink>
-      </li>
+
       {user ? (
         <>
           <li>
@@ -39,6 +35,11 @@ const Navbar = () => {
           <li>
             <NavLink className="mx-1 rounded-lg text-md" to="add-service">
               Add Service
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="mx-1 rounded-lg text-md" to="blog">
+              Blogs
             </NavLink>
           </li>
           <li>
@@ -54,11 +55,18 @@ const Navbar = () => {
           </li>
         </>
       ) : (
-        <li>
-          <NavLink className="mx-1 rounded-lg text-md" to="login">
-            Login
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink className="mx-1 rounded-lg text-md" to="blog">
+              Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="mx-1 rounded-lg text-md" to="login">
+              Login
+            </NavLink>
+          </li>
+        </>
       )}
     </>,
   ];
