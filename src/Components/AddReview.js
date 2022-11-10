@@ -24,7 +24,7 @@ const AddReview = () => {
       comment: comment,
     };
 
-    fetch(`https://doctor-server-ruddy.vercel.app/add-review/${name}`, {
+    fetch(`https://doctor-server-ruddy.vercel.app/add-review/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
