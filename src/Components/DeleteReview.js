@@ -2,8 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const DeleteReview = ({ deleteReview, setDeleteReview, refetch }) => {
-  const { service, comment, _id } = deleteReview;
-  console.log(comment);
+  const { comment, _id } = deleteReview;
   const handleDelete = () => {
     fetch(`http://localhost:5000/my-review/${_id}`, {
       method: "DELETE",
@@ -29,7 +28,7 @@ const DeleteReview = ({ deleteReview, setDeleteReview, refetch }) => {
           <h3 className="font-bold text-red-500 text-lg">
             Are you sure you want to delete!
           </h3>
-          <p className="py-4"> {service}</p>
+          <p className="py-4"> {comment}</p>
           <div className="modal-action">
             <button onClick={handleDelete} className="btn btn-xs btn-error">
               Delete
