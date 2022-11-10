@@ -20,7 +20,7 @@ const Services = () => {
       </div>
       <Link
         to="../services"
-        className="flex justify-center lg:mx-20 md:mx-10 mx-5"
+        className="flex justify-center lg:mx-20 md:mx-10 mx-5 mt-7"
       >
         <button className="btn btn-outline">See All services</button>
       </Link>

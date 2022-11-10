@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Banner from "../Components/Banner";
+import ExtraSection from "../Components/ExtraSection";
 import Services from "../Components/ServiceSection";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Banner />
       <Services />
+      <ExtraSection />
     </div>
   );
 };

@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-center items-center pb-2">
           <p className="text-xl ml-10">
-            © zanjira.com 2022 | Powered by ashrafs.care
+            © Doctor Bhai 2022 | Powered by ashrafs.care
           </p>
         </div>
         <p></p>
