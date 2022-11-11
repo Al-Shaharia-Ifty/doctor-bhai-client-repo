@@ -43,7 +43,7 @@ const ServiceDetails = () => {
         <h2 className="text-2xl text-center">Reviews</h2>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-10 lg:mx-20 md:mx-10 mx-5">
           {review.map((r) => (
-            <ReviewCart r={r} key={r.email} />
+            <ReviewCart r={r} key={r._id} />
           ))}
         </div>
         <Link to={`/add-review/${_id}`} className="flex justify-center">

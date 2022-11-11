@@ -19,6 +19,7 @@ const MyReview = () => {
       },
     }).then((res) => res.json())
   );
+
   useEffect(() => {
     document.title = "My Review - Doctor Bhai";
   }, []);
@@ -32,7 +33,7 @@ const MyReview = () => {
         My all review on services
       </h2>
       <div className="overflow-x-auto mx-5 md:mx-10 lg:mx-20">
-        {reviews.length === 0 ? (
+        {reviews?.length === 0 ? (
           <p>No reviews were added</p>
         ) : (
           <table className="table w-full">
@@ -45,7 +46,7 @@ const MyReview = () => {
               </tr>
             </thead>
             <tbody>
-              {reviews.map((r, index) => (
+              {[...reviews].reverse().map((r, index) => (
                 <tr key={r._id}>
                   <th>{index + 1}</th>
                   <td>{r.service}</td>

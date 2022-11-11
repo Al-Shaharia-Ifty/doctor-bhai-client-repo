@@ -9,19 +9,26 @@ const AddReview = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const { _id, name } = data;
-  const { displayName, email, photoURL } = user;
+  const { displayName, email, photoURL, no } = user;
   useEffect(() => {
     document.title = `Add Review - Doctor Bhai`;
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
+    let latestNo;
+    if (!no) {
+      latestNo = 1;
+    } else {
+      latestNo = no + 1;
+    }
     const uploadComment = {
       name: displayName,
       service: name,
       email: email,
       photo: photoURL,
       comment: comment,
+      no: latestNo,
     };
 
     fetch(`https://doctor-server-ruddy.vercel.app/add-review/`, {
